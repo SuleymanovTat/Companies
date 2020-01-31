@@ -17,7 +17,6 @@
     </style>
 
     <style name="CollapsedExpandedTitleText" parent="AppTheme">
-        <item name="android:background">@color/colorWhite</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 </resources>
