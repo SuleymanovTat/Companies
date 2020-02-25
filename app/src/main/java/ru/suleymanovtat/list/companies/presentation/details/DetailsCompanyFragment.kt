@@ -34,8 +34,8 @@ class DetailsCompanyFragment : BaseFragment(R.layout.details_company_fragment) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        companyLocal = arguments!!.getParcelable(KEY_COMPANY)
-        viewModel?.setData(companyLocal!!)
+        companyLocal = arguments?.getParcelable(KEY_COMPANY)
+        companyLocal?.let { viewModel?.setData(it) }
     }
 
     override fun injectDependency(component: ViewModelComponent) {
@@ -51,7 +51,7 @@ class DetailsCompanyFragment : BaseFragment(R.layout.details_company_fragment) {
         textViewLatLon.setOnClickListener { openMap() }
         viewModel?.company!!.observe(viewLifecycleOwner, Observer { item ->
             Glide
-                .with(activity!!)
+                .with(requireActivity())
                 .load(item.img)
                 .centerCrop()
                 .error(R.drawable.ic_placeholder)
