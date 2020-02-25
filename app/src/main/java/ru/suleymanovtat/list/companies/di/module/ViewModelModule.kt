@@ -21,6 +21,5 @@ class ViewModelModule(app: App) {
 
     @ViewModelScope
     @Provides
-    internal fun providesDetailsCompanyViewModel(companiesInteractor: CompaniesInteractor) =
-        DetailsCompanyViewModel(app)
+    internal fun providesDetailsCompanyViewModel() = DetailsCompanyViewModel(app)
 }

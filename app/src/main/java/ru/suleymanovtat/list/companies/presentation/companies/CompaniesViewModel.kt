@@ -34,7 +34,7 @@ class CompaniesViewModel(
             companiesInteractor.loading()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe({ companiesLocal ->
+                .subscribe({
                 }, {
                     companies.postValue(WrapperLocal(0, message = onError(it)))
                 })
