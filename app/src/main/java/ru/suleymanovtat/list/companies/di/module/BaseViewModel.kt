@@ -15,7 +15,6 @@ abstract class BaseViewModel(application: Application) : AndroidViewModel(applic
     var disposable: CompositeDisposable = CompositeDisposable()
     fun getContext() = getApplication<App>()
     fun getString(@StringRes id: Int): String = getContext().getString(id)
-    fun getString(@StringRes id: Int, text: String): String = getContext().getString(id, text)
 
     fun onError(throwable: Throwable): String {
         var localThrowable = throwable
